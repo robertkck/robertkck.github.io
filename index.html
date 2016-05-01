@@ -11,6 +11,22 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style type="text/css">
+
+			.axis path,
+			.axis line {
+				fill: none;
+				stroke: black;
+				shape-rendering: crispEdges;
+			}
+
+			.axis text {
+				font-family: sans-serif;
+				font-size: 11px;
+			}
+
+		</style>
   </head>
   <body>
     <div class="wrapper">
@@ -43,90 +59,79 @@
 
 <p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
-<script src="http://d3js.org/d3.v2.js"></script>
-		<style type="text/css">
-			
-			.axis path,
-			.axis line {
-				fill: none;
-				stroke: black;
-				shape-rendering: crispEdges;
-			}
-			
-			.axis text {
-				font-family: sans-serif;
-				font-size: 11px;
-			}
 
-		</style>
-	</head>
-	<body>
-		<script type="text/javascript">
+<script type="text/javascript">
 
-			var w = 500;
-			var h = 300;
-			var padding = 30;
-			
-			var b=25, gap=5;
-			
-			var data = {
-		  "Issue":["Race Relations","Education","Terrorism","Energy Policy","Foreign Affairs","Environment","Situation in Iraq","Taxes","Healthcare Policy","Economy","Situation in Afghanistan","Federal Budget Deficit","Immigration"],
-		  "Approve":[52,49,48,47,44,43,41,41,40,38,36,31,29],
-		  "Disapprove":[38,40,45,42,48,51,53,54,57,59,57,64,62],
-		  "None":[10,11,7,11,8,6,6,5,3,3,7,5,9]
-		};
-		var cat = data.Issue;
-		var stats = [data.Approve, data.Disapprove, data.None];
+  //Width and height
+  var w = 500;
+  var h = 300;
+  var height = 300, width=500, mx=13, n=3;
+  var padding = 30;
+  var color = d3.interpolateRgb("#aad", "#556");
 
-			//Create scale functions
-			//var xScale = d3.scale.linear()
-				//				 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
-					//			 .range([padding, w - padding * 2]);
+  var data = {
+  "Issue":["Race Relations","Education","Terrorism","Energy Policy","Foreign Affairs","Environment","Situation in Iraq","Taxes","Healthcare Policy","Economy","Situation in Afghanistan","Federal Budget Deficit","Immigration"],
+  "Approve":[52,49,48,47,44,43,41,41,40,38,36,31,29],
+  "Disapprove":[38,40,45,42,48,51,53,54,57,59,57,64,62],
+  "None":[10,11,7,11,8,6,6,5,3,3,7,5,9]
+};
 
-			//var yScale = d3.scale.linear()
-				//				 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
-					//			 .range([h - padding, padding]);
+var cat = data.Issue;
+var stats = [data.Approve, data.Disapprove, data.None];
 
-			
+var data_xy = stats.map(function(row) {
+  return row.map(function(d, i) {
+    return {
+        x: i,
+        y: d
+      };
+    });
+  });
 
-			//Define Y axis
-			//var yAxis = d3.svg.axis()
-				//			  .scale(yScale)
-					//		  .orient("left")
-						//	  .ticks(5);
+d3.layout.stack().offset('zero')(data_xy);
 
-			//Create SVG element
-			var svg = d3.select("body")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h);
-			
-			var stack = d3.layout.stack()
-				.offset("zero")
-				.values(function(d) {return d});
-						
-			svg.selectAll("rect")
-				.data(stack(stats))
-				.enter()
-				.append("rect")
-				.attr("x", function(d,i) {return i*(b + gap)})
-				.attr("y", function(d,i) {return d[i]})
-				.attr("width", b)
-				.attr("height", function(d,i) {return d[i]});
-				
-			
-			
+my = d3.max(data_xy, function(d) {
+  return d3.max(d, function(d) {
+  return d.y0 + d.y;
+  });
+});
 
-			
-			//Create Y axis
-			//svg.append("g")
-				//.attr("class", "axis")
-				//.attr("transform", "translate(" + padding + ",0)")
-				//.call(yAxis);
-			
+x = function(d) { return d.x * width / mx; },
+y0 = function(d) { return height - d.y0 * height / my; },
+y1 = function(d) { return height - (d.y + d.y0) * height / my; };
 
-		</script>
-		
+var vis = d3.select("body")
+  .append("svg")
+    .attr("width",w)
+    .attr("height",h);
+
+var layers = vis.selectAll("g.layer")
+  .data(data_xy)
+  .enter().append("g")
+  .style("fill", function(d, i) { return color(i / (n - 1)); })
+  .attr("class", "layer");
+
+var bars = layers.selectAll("g.bar")
+  .data(function(d) { return d; })
+  .enter().append("g")
+  .attr("class", "bar")
+  .attr("transform", function(d) { return "translate(" + x(d) + ",0)"; });
+
+bars.append("rect")
+  .attr("width", x({x: .9}))
+  .attr("x", 0)
+  .attr("y", height)
+  .attr("height",0)
+  .on("mouseover", function(){d3.select(this).style("fill", "#555");})
+  .on("mouseout", function(){d3.select(this).style("fill", null);})
+  .transition()
+  .duration(1000)
+  .attr("y", y1)
+  .attr("height", function(d) { return y0(d) - y1(d); });
+
+
+
+</script>
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
 
@@ -137,6 +142,6 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+
   </body>
 </html>
