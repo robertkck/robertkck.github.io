@@ -1,0 +1,8 @@
+.. _jupyter:
+
+Jupyter Notebooks
+=============================================
+
+pRCA
+----------
+:ref:`../../pRCA/pRCA.ipynb`

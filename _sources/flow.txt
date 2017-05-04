@@ -1,0 +1,8 @@
+.. _flow:
+
+Data Flow Diagram
+=============================================
+
+Here is the diagram
+
+.. image:: diagram.png 

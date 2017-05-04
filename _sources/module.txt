@@ -1,0 +1,54 @@
+module package
+==============
+
+Submodules
+----------
+
+module.RCA module
+-----------------
+
+.. automodule:: module.RCA
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+module.RTA module
+-----------------
+
+.. automodule:: module.RTA
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+module.comtrade module
+----------------------
+
+.. automodule:: module.comtrade
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+module.processing module
+------------------------
+
+.. automodule:: module.processing
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+module.proximity module
+-----------------------
+
+.. automodule:: module.proximity
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: module
+    :members:
+    :undoc-members:
+    :show-inheritance:
