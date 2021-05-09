@@ -1,27 +1,22 @@
 ---
-title: "Frank Hermosillo"
-image: "frank.jpg"
+title: "Robert Hawlik"
+image: "portrait.jpg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
+    url: "https://linkedin.com/in/rhawlik/"
   - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://twitter.com/RHawlik"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/robertkck"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:roberthawlik@outlook.at"
 output:
   postcards::trestles
 ---
  
 ## Bio
 
-Frank Hermosillo studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+Experienced Data Scientist and Researcher with a demonstrated history of working in the research and innovation policy field. Focus on applying network analysis, causal inference and data visualisation techniques to impac assessments. Skilled in analysing large patent and publication data and implementing surveys. Strong information technology professional with a Master’s Degree in Economics from the University of Vienna. … 
 
 ## Education
 
