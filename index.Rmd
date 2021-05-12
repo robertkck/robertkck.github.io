@@ -6,30 +6,14 @@ links:
     url: "https://linkedin.com/in/rhawlik/"
   - label: Twitter
     url: "https://twitter.com/RHawlik"
+  - label: Google Scholar
+    url: "https://scholar.google.at/citations?user=09qIva8AAAAJ&hl=en"
   - label: GitHub
     url: "https://github.com/robertkck"
   - label: Email
     url: "mailto:roberthawlik@outlook.at"
 output:
-  postcards::trestles
+  postcards::jolla
 ---
  
-## Bio
-
-Experienced Data Scientist and Researcher with a demonstrated history of working in the research and innovation policy field. Focus on applying network analysis, causal inference and data visualisation techniques to impac assessments. Skilled in analysing large patent and publication data and implementing surveys. Strong information technology professional with a Master’s Degree in Economics from the University of Vienna. … 
-
-## Education
-
-**Massachusetts Institute of Technology** | Cambridge, MA
-
-Ph.D. in Computer Science | September 2009 - May 2014
-
-**The University of California, Berkeley** | Berkeley, CA
-
-B.S. in Computer Science | September 2005 - May 2009
-
-## Experience
-
-**Google Brain** | Principal Investigator | January 2018 - Present
-
-**Netflix** | Research Scientist | June 2014 - December 2017
+Data Scientist with a history of working in the research and innovation policy field. Passionate about applying network analysis, causal inference and data visualisation techniques in R to impact assessments and monitoring. Talk to me about automating your coffee machine with Raspberry Pi `r emo::ji("coffee")`
