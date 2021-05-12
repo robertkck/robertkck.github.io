@@ -11,7 +11,7 @@ links:
   - label: GitHub
     url: "https://github.com/robertkck"
   - label: Email
-    url: "mailto:roberthawlik@outlook.at"
+    url: "mailto:rhawlik@outlook.at"
 output:
   postcards::jolla
 ---
