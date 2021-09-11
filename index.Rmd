@@ -16,4 +16,4 @@ output:
   postcards::jolla
 ---
  
-Data Scientist with a history of working in the research and innovation policy field. Passionate about applying network analysis, causal inference and data visualisation techniques in R to impact assessments and monitoring. Talk to me about automating your coffee machine with Raspberry Pi `r emo::ji("coffee")`
+Data Scientist at [wikifolio Financial Technologies](https://wikifolio.com) with a history of working in the research and innovation policy field. Passionate about applying network analysis, causal inference and data visualisation techniques in R to impact assessments and monitoring. Talk to me about automating your coffee machine with Raspberry Pi `r emo::ji("coffee")`
