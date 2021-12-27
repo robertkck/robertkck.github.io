@@ -1,7 +1,6 @@
 ---
 title: "Robert Hawlik"
 image: "portrait.jpg"
-google_analytics: "G-876TBQ7D1Y"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/rhawlik/"
@@ -14,7 +13,10 @@ links:
   - label: Email
     url: "mailto:rhawlik@outlook.at"
 output:
-  postcards::jolla
+  postcards::jolla:
+    includes:
+      in_header: header.html
+
 ---
  
 Data Scientist at [wikifolio Financial Technologies](https://wikifolio.com) with a history of working in the research and innovation policy field. Passionate about applying network analysis, causal inference and data visualisation techniques in R to impact assessments and monitoring. Talk to me about automating your coffee machine with Raspberry Pi `r emo::ji("coffee")`
