@@ -1,6 +1,7 @@
 ---
 title: "Robert Hawlik"
 image: "portrait.jpg"
+google_analytics: "G-876TBQ7D1Y"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/rhawlik/"
