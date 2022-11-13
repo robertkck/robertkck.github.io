@@ -4,8 +4,8 @@ image: "portrait.jpg"
 links:
   - label: LinkedIn
     url: "https://linkedin.com/in/rhawlik/"
-  - label: Twitter
-    url: "https://twitter.com/RHawlik"
+  - label: Mastodon
+    url: "https://vis.social/web/\\@rhawlik"
   - label: Google Scholar
     url: "https://scholar.google.at/citations?user=09qIva8AAAAJ&hl=en"
   - label: GitHub
