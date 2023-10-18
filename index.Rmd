@@ -19,4 +19,4 @@ output:
 
 ---
  
-Data Scientist at [wikifolio Financial Technologies](https://wikifolio.com) with a history of working in the research and innovation policy field. Passionate about applying network analysis, causal inference and data visualisation techniques in R to impact assessments and monitoring. Talk to me about automating your coffee machine with Raspberry Pi `r emo::ji("coffee")`
+On my journey from Data Scientist to middle-school teacher to level the education playing field with [Teach for Austria](https//teachforaustria.at). Always looking out for exciting business cases and societal question that can be tackled with data analytics and data visualisation. My statistical love language is [R](https://www.r-project.org/). Talk to me about automating your coffee machine with Raspberry Pi ☕
